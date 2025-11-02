@@ -1,0 +1,36 @@
+{
+  "name": "panamerican-taekwondo-academy",
+  "version": "1.0.0",
+  "description": "Official website for Panamerican Taekwondo Academy in Winston-Salem, NC",
+  "main": "src/js/main.js",
+  "scripts": {
+    "build": "npm run build:css && npm run build:js",
+    "build:css": "sass src/scss:src/css --style compressed",
+    "build:js": "uglifyjs src/js/main.js -o src/js/main.min.js -c -m",
+    "test": "npm run test:html && npm run test:accessibility",
+    "test:html": "html5validator --root src/",
+    "test:accessibility": "axe src/index.html",
+    "deploy": "gh-pages -d src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MartialArtsCode/panamerican-taekwondo-website.git"
+  },
+  "keywords": [
+    "taekwondo",
+    "martial-arts",
+    "winston-salem",
+    "academy",
+    "wordpress",
+    "responsive"
+  ],
+  "author": "Carlos Padilla - Panamerican Taekwondo Academy",
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.69.0",
+    "uglify-js": "^3.17.4",
+    "html5validator": "^0.4.0",
+    "@axe-core/cli": "^4.8.0",
+    "gh-pages": "^6.0.0"
+  }
+}
