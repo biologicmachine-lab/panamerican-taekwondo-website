@@ -1,19 +1,46 @@
-# WordPress
+# WordPress Core Files
 wp-config.php
 wp-content/uploads/
+wp-content/cache/
 .htaccess
 
-# Development
+# Development Files
 node_modules/
+npm-debug.log*
 .env
-*.log
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
-# IDE
-.vscode/
+# IDE and Editor Files
+.vscode/settings.json
 .idea/
-*.sublime-*
+*.sublime-project
+*.sublime-workspace
+*~
+*.swp
+*.swo
 
-# OS
+# OS Generated Files
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
 desktop.ini
+
+# Logs
+logs
+*.log
+
+# Backup Files
+*.bak
+*.tmp
+*.backup
+
+# Sass/SCSS
+.sass-cache/
+*.css.map
