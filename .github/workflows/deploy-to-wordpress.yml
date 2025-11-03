@@ -55,12 +55,36 @@ jobs:
           **/.git*
           **/.git*/**
           **/node_modules/**
+          **/*wordpress*
+          **/*WordPress*
+          **/*WORDPRESS*
+          **/*wp-*
+          **/*WP-*
+          **/wp-*
+          **/WP-*
+          **/*.wp
+          **/*.WP
+          **/wordpress/**
+          **/WordPress/**
+          **/WORDPRESS/**
           
     - name: 📧 Notify Academy Team
-      if: success()
+      if: always()
       uses: 8398a7/action-slack@v3
       with:
-        status: success
-        text: "🥋 Panamerican Taekwondo Academy website deployed successfully!"
+        status: ${{ job.status }}
+        channel: '#taekwondo-deployments'
+        username: 'GitHub Actions'
+        icon_emoji: ':martial_arts_uniform:'
+        fields: repo,message,commit,author,action,eventName,ref,workflow
+        text: |
+          🥋 Panamerican Taekwondo Academy Deployment Status: ${{ job.status }}
+          
+          Repository: ${{ github.repository }}
+          Branch: ${{ github.ref }}
+          Commit: ${{ github.sha }}
+          Author: ${{ github.actor }}
+          
+          ${{ job.status == 'success' && '✅ Website deployed successfully!' || '❌ Deployment failed!' }}
       env:
-        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}

@@ -22,13 +22,18 @@ jobs:
     - name: 📱 Lighthouse Performance Test
       uses: treosh/lighthouse-ci-action@v10
       with:
-        configPath: './lighthouserc.js'
+        configPath: './lighthouse-config.js'
         uploadDir: './lighthouse-results'
         
     - name: 🔒 Security Scan
-      uses: securecodewarrior/github-action-add-sarif@v1
-      with:
-        sarif-file: 'security-scan.sarif'
+      uses: github/super-linter@v4
+      env:
+        DEFAULT_BRANCH: main
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        LINTER_RULES_PATH: '.'
+        VALIDATE_HTML: true
+        VALIDATE_CSS: true
+        VALIDATE_JAVASCRIPT_ES: true
         
     - name: ♿ Accessibility Check
       run: |
