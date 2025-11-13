@@ -4,8 +4,7 @@
   "description": "Official website for Panamerican Taekwondo Academy in Winston-Salem, NC",
   "main": "src/js/main.js",
   "scripts": {
-    "build": "npm run build:css && npm run build:js",
-    "build:css": "sass src/scss:src/css --style compressed",
+    "build": "npm run build:js",
     "build:js": "uglifyjs src/js/main.js -o src/js/main.min.js -c -m",
     "lint": "npm run lint:js && npm run lint:css",
     "lint:js": "eslint src/js/**/*.js",
@@ -28,7 +27,6 @@
   "author": "Carlos Padilla - Panamerican Taekwondo Academy",
   "license": "MIT",
   "devDependencies": {
-    "sass": "^1.69.0",
     "uglify-js": "^3.17.4",
     "eslint": "^8.57.0",
     "stylelint": "^16.0.0",
