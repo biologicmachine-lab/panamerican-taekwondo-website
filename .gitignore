@@ -17,3 +17,5 @@ node_modules/
 .DS_Store
 Thumbs.db
 desktop.ini
+src/index-wordpress-backup.html
+src/index.html.bak
