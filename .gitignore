@@ -7,6 +7,7 @@ wp-content/uploads/
 node_modules/
 .env
 *.log
+package-lock.json
 
 # IDE
 .vscode/
@@ -17,3 +18,7 @@ node_modules/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Build artifacts
+src/js/main.min.js
+src/css/*.min.css

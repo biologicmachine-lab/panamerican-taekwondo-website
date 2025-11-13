@@ -7,9 +7,10 @@
     "build": "npm run build:css && npm run build:js",
     "build:css": "sass src/scss:src/css --style compressed",
     "build:js": "uglifyjs src/js/main.js -o src/js/main.min.js -c -m",
-    "test": "npm run test:html && npm run test:accessibility",
-    "test:html": "html5validator --root src/",
-    "test:accessibility": "axe src/index.html",
+    "lint": "npm run lint:js && npm run lint:css",
+    "lint:js": "eslint src/js/**/*.js",
+    "lint:css": "stylelint src/css/**/*.css",
+    "format": "prettier --write \"src/**/*.{js,css,html}\"",
     "deploy": "gh-pages -d src"
   },
   "repository": {
@@ -29,8 +30,10 @@
   "devDependencies": {
     "sass": "^1.69.0",
     "uglify-js": "^3.17.4",
-    "html5validator": "^0.4.0",
-    "@axe-core/cli": "^4.8.0",
+    "eslint": "^8.57.0",
+    "stylelint": "^16.0.0",
+    "stylelint-config-standard": "^36.0.0",
+    "prettier": "^3.0.0",
     "gh-pages": "^6.0.0"
   }
 }

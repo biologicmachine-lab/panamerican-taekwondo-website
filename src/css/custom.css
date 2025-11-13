@@ -1,10 +1,47 @@
-/* Panamerican Taekwondo Academy - Custom Styles */
+/**
+ * Panamerican Taekwondo Academy - Custom Styles
+ * Enhanced styles for better maintainability and performance
+ * @version 1.0.0
+ */
 
-/* Enhanced Mobile Navigation */
+/* ============================================
+   CSS Custom Properties (Variables)
+   ============================================ */
+:root {
+    /* Academy Branding Colors */
+    --tkd-red: #c41e3a;
+    --tkd-gold: #ffd700;
+    --tkd-black: #1a1a1a;
+    --tkd-white: #ffffff;
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    
+    /* Border Radius */
+    --border-radius-sm: 0.25rem;
+    --border-radius-md: 0.5rem;
+    
+    /* Box Shadow */
+    --box-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --box-shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
+    --box-shadow-focus: 0 0 0 0.2rem rgba(196, 30, 58, 0.25);
+}
+
+/* ============================================
+   Mobile Navigation
+   ============================================ */
 @media (max-width: 768px) {
     .mobile-nav {
         transform: translateX(0);
-        transition: transform 0.3s ease;
+        transition: transform var(--transition-normal);
     }
     
     .mobile-nav.hidden {
@@ -12,30 +49,77 @@
     }
 }
 
-/* Contact Form Enhancements */
+/* ============================================
+   Contact Form Enhancements
+   ============================================ */
 .contact-form .form-group {
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.contact-form input,
+.contact-form textarea {
+    transition: border-color var(--transition-fast),
+                box-shadow var(--transition-fast);
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-    border-color: #c41e3a; /* Taekwondo red */
-    box-shadow: 0 0 0 0.2rem rgba(196, 30, 58, 0.25);
+    border-color: var(--tkd-red);
+    box-shadow: var(--box-shadow-focus);
+    outline: none;
 }
 
-/* Blog Enhancement Styles */
+.contact-form input.error,
+.contact-form textarea.error {
+    border-color: var(--tkd-red);
+}
+
+/* ============================================
+   Blog Post Cards
+   ============================================ */
 .blog-post {
-    transition: transform 0.2s ease;
+    transition: transform var(--transition-fast),
+                box-shadow var(--transition-fast);
 }
 
 .blog-post:hover {
     transform: translateY(-5px);
+    box-shadow: var(--box-shadow-md);
 }
 
-/* Academy Branding Colors */
-:root {
-    --tkd-red: #c41e3a;
-    --tkd-gold: #ffd700;
-    --tkd-black: #1a1a1a;
-    --tkd-white: #ffffff;
+/* ============================================
+   Utility Classes
+   ============================================ */
+.text-center {
+    text-align: center;
+}
+
+.mb-md {
+    margin-bottom: var(--spacing-md);
+}
+
+.mt-lg {
+    margin-top: var(--spacing-lg);
+}
+
+/* ============================================
+   Accessibility Improvements
+   ============================================ */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Focus visible for keyboard navigation */
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--tkd-red);
+    outline-offset: 2px;
 }
