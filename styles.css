@@ -15,7 +15,7 @@
     --gradient-bg: linear-gradient(to bottom, #ff0000, #2f009e);
 }
 
-  {
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
