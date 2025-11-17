@@ -1,7 +1,7 @@
 /* Panamerican Taekwondo Academy - Professional Landing Page */
 
 :root {
-    --header-logo: "images/full.png";
+    --header-logo: display;
     --bg:#a1aefdda;
     --text:#ffffff;
     --accent:#cc1f2b;
