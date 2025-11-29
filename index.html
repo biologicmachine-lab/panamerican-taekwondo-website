@@ -2,21 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Panamerican Taekwondo Academy CSS Showcase</title>
+  <title>Panamerican Taekwondo Academy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Demonstrate all CSS features of Panamerican Taekwondo Academy">
+  <meta name="description" content="Showcasing all interactive features of Panamerican Taekwondo Academy">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Inline dynamic styles for demonstration (can be moved to styles.css) */
+    .menu-toggle {
+      cursor: pointer;
+      display: block;
+      margin: 10px;
+      font-size: 1.5rem;
+    }
+    nav.active { display: block; }
+    .nav a { margin: 0 10px; text-decoration: none; }
+    /* Add any other static styles as needed */
+  </style>
 </head>
 <body>
-  <a href="#main" class="skip-link">Skip to main content</a>
-  
   <header>
     <div class="header-inner container">
       <div class="brand">
-        <img src="images/icon.png" alt="Brand icon">
+        <img src="images/icon.png" alt="Logo" />
         <span>Panamerican Taekwondo</span>
       </div>
+      <button class="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </button>
       <nav class="nav">
         <a href="#home">Home</a>
         <a href="#about">About</a>
@@ -24,57 +37,74 @@
         <a href="#contact">Contact</a>
       </nav>
     </div>
-    <img src="images/full.png" alt="Panamerican Taekwondo Logo" class="header-logo" style="display:block;">
-    <h1>Panamerican Taekwondo Academy</h1>
+    <h1>Welcome!</h1>
   </header>
-  
-  <main id="main" class="container">
-    <section>
-      <h2 class="hero-title">Test Your Might!</h2>
-      <p style="animation: fadeInUp 1.5s;">Empower your spirit. Strengthen your body. Begin your journey today.</p>
+
+  <main id="#main">
+    <!-- Hero Section -->
+    <section id="home">
+      <h2>Test Your Might!</h2>
       <div class="button-group">
-        <a class="glassy-button" href="#">
-          <i class="fab fa-whatsapp"></i> Join Today!
-        </a>
-        <a class="glassy-button" href="#">
-          <i class="fab fa-facebook"></i> Follow Us!
-        </a>
-        <a class="glassy-button" href="#">
-          <i class="fas fa-sms"></i> Schedule Trial!
-        </a>
+        <a class="glassy-button" href="#"><i class="fab fa-whatsapp"></i> Join Today!</a>
+        <a class="glassy-button" href="#"><i class="fab fa-facebook"></i> Follow Us!</a>
+        <a class="glassy-button" href="#"><i class="fas fa-sms"></i> Schedule Trial!</a>
       </div>
     </section>
-    
-    <section>
+
+    <!-- About Section -->
+    <section id="about">
       <h2>About Our Academy</h2>
-      <div class="grid" style="animation: pulse 2s infinite;">
-        <div class="card" style="animation: fireCollide 4s infinite;">
+      <div class="grid">
+        <div class="card">
           <h3>Professional Trainers</h3>
-          <p>Our instructors are certified black belts with decades of teaching experience.</p>
+          <p>Our certified trainers will help you achieve your goals.</p>
         </div>
-        <div class="card" style="animation: pulse 1.5s;">
+        <div class="card">
           <h3>Flexible Schedule</h3>
-          <p>We offer classes for children, teens, and adults to suit your timetable.</p>
+          <p>Classes for all ages and levels!</p>
         </div>
       </div>
     </section>
-    
-    <section>
+
+    <!-- Parallax Section -->
+    <section id="parallax">
+      <h2>Feel the Thrill</h2>
+      <p>Improving lives through martial arts.</p>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
       <h2>Student Testimonials</h2>
-      <div class="card" style="animation: fadeInUp 1s;">
-        <p>"I've learned so much at PTA—my confidence is sky high!"</p>
+      <div class="card">
+        <p>"Joining Panamerican Taekwondo has changed my life!"</p>
       </div>
-      <div class="button-group">
-        <a class="glassy-button" href="#">
-          <i class="fas fa-star"></i> Google Reviews
-        </a>
-      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <form id="enrollForm">
+        <label>
+          Name:
+          <input type="text" name="name" required>
+        </label>
+        <label>
+          Email:
+          <input type="email" name="email" required>
+        </label>
+        <label>
+          Message:
+          <textarea name="message" required></textarea>
+        </label>
+        <button type="submit" class="glassy-button">Submit</button>
+      </form>
     </section>
   </main>
 
-  <footer class="footer" style="animation: fadeInUp 2s;">
-    <p>&copy; 2025 Panamerican Taekwondo Academy, Winston-Salem, NC</p>
-    <p>Contact: <a href="mailto:info@panamericantaekwondo.com">info@panamericantaekwondo.com</a></p>
+  <footer>
+    <p>&copy; 2025 Panamerican Taekwondo Academy</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
