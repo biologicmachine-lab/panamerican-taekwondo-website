@@ -54,8 +54,8 @@ npm run dev
 - HTML5
 - CSS3 (with glassmorphism and modern effects)
 - JavaScript (ES6+)
-- Font Awesome (for icons)
-- Socket.io (for real-time features)
+- Font Awesome (loaded via CDN for icons)
+- Socket.io (loaded via CDN for real-time features)
 
 ## License
 
